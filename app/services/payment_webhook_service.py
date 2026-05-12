@@ -1,5 +1,10 @@
-class PaymentWebhookService:
 
+from utils.payload_parser import parse_payment_payload
+from utils.signature_helper import verify_signature
+from repositories.payment_event_repository import PaymentEventRepository
+
+
+class PaymentWebhookService:
     def __init__(self, db):
         self.db = db
         self.repo = PaymentEventRepository(db)
@@ -7,19 +12,12 @@ class PaymentWebhookService:
     async def process_webhook(self, request):
 
         raw_body = await request.body()
-
-        signature = request.headers.get(
-            "X-Razorpay-Signature"
-        )
+        signature = request.headers.get("X-Razorpay-Signature")
 
         verify_signature(raw_body, signature)
-
         payload = await request.json()
-
         event_id = payload["id"]
-
         existing = self.repo.get_by_event_id(event_id)
-
         if existing:
             raise DuplicateWebhookException()
 

@@ -8,3 +8,76 @@
 2026-05-12 17:29:36 | main.py | INFO | GET /favicon.ico | Status: 404 | Time: 0.0004s
 2026-05-12 17:29:36 | main.py | INFO | GET /api/docs | Status: 404 | Time: 0.0002s
 2026-05-12 17:29:36 | main.py | INFO | GET /favicon.ico | Status: 404 | Time: 0.0003s
+2026-05-12 22:29:14 | main.py | INFO | GET / | Status: 404 | Time: 0.0023s
+2026-05-12 22:29:14 | main.py | INFO | GET /favicon.ico | Status: 404 | Time: 0.0012s
+2026-05-12 22:29:25 | main.py | INFO | GET /api/docs | Status: 404 | Time: 0.001s
+2026-05-12 22:30:16 | main.py | INFO | GET /api/docs | Status: 404 | Time: 0.0009s
+2026-05-12 22:30:37 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0065s
+2026-05-12 22:30:52 | main.py | INFO | GET /static/favicon.ico | Status: 404 | Time: 0.0025s
+2026-05-12 22:31:01 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0016s
+2026-05-12 22:31:02 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0018s
+2026-05-12 22:31:03 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0018s
+2026-05-12 22:31:03 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0016s
+2026-05-12 22:31:03 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0019s
+2026-05-12 22:31:03 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0013s
+2026-05-12 22:31:03 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0015s
+2026-05-12 22:31:04 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0017s
+2026-05-12 22:31:05 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0015s
+2026-05-12 22:31:05 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0066s
+2026-05-12 22:45:14 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0032s
+2026-05-12 22:45:21 | main.py | INFO | GET /openapi.json | Status: 200 | Time: 0.0062s
+2026-05-12 22:45:21 | main.py | INFO | GET /static/favicon.ico | Status: 200 | Time: 0.1015s
+2026-05-12 22:47:49 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0079s
+2026-05-12 22:47:50 | main.py | INFO | GET /openapi.json | Status: 200 | Time: 0.0116s
+2026-05-12 22:47:50 | main.py | INFO | GET /static/favicon.ico | Status: 304 | Time: 0.0967s
+2026-05-12 22:48:01 | main.py | ERROR | Unhandled exception occurred
+Traceback (most recent call last):
+  File "C:\Project\FastApiProject\payment_webhook_system\app\main.py", line 58, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project\FastApiProject\civic_data_venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Project\FastApiProject\civic_data_venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Project\FastApiProject\civic_data_venv\Lib\site-packages\starlette\middleware\cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Project\FastApiProject\civic_data_venv\Lib\site-packages\starlette\middleware\cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Project\FastApiProject\civic_data_venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Project\FastApiProject\civic_data_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Project\FastApiProject\civic_data_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Project\FastApiProject\civic_data_venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Project\FastApiProject\civic_data_venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Project\FastApiProject\civic_data_venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Project\FastApiProject\civic_data_venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Project\FastApiProject\civic_data_venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Project\FastApiProject\civic_data_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Project\FastApiProject\civic_data_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Project\FastApiProject\civic_data_venv\Lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Project\FastApiProject\civic_data_venv\Lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Project\FastApiProject\civic_data_venv\Lib\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project\FastApiProject\payment_webhook_system\app\api\public\webhook_routes.py", line 14, in receive_payment_webhook
+    service = PaymentWebhookService(db)
+  File "C:\Project\FastApiProject\payment_webhook_system\app\services\payment_webhook_service.py", line 5, in __init__
+    self.repo = PaymentEventRepository(db)
+                ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'PaymentEventRepository' is not defined

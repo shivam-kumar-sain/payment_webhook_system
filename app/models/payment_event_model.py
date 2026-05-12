@@ -1,15 +1,16 @@
-class PaymentEvent(Base):
+from sqlalchemy import String, JSON, DateTime
+from sqlalchemy.orm import Mapped, mapped_column
+from datetime import datetime
 
+from core.database import Base
+
+
+class PaymentEvent(Base):
     __tablename__ = "payment_events"
 
-    id = Column(Integer, primary_key=True)
 
-    event_id = Column(String, unique=True, nullable=False)
-
-    payment_id = Column(String, index=True)
-
-    event_type = Column(String)
-
-    payload = Column(JSON)
-
-    received_at = Column(DateTime)
+    event_id: Mapped[str] = mapped_column(String,unique=True,nullable=False)
+    payment_id: Mapped[str] = mapped_column(String,index=True,nullable=False)
+    event_type: Mapped[str] = mapped_column(String,nullable=False)
+    payload: Mapped[dict] = mapped_column(JSON,nullable=False)
+    received_at: Mapped[datetime] = mapped_column(DateTime,default=datetime.utcnow)

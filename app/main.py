@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Request,HTTPException
+from fastapi.staticfiles import StaticFiles
 import uvicorn
 from core.logger import get_logger
 from api.router import api_router
@@ -6,13 +7,8 @@ from core.config import settings
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.docs import get_swagger_ui_html
 from fastapi.openapi.utils import get_openapi
-
-
 import os
 import time
-app = FastAPI()
-
-app.include_router(api_router)
 
 """ 
     ---------------------------------------------------------
@@ -96,6 +92,12 @@ def create_application() -> FastAPI:
 app = create_application()
 
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+app.mount("/static",StaticFiles(directory=os.path.join(BASE_DIR, "static")),name="static",)
+
+
+app.include_router(api_router)
 """ 
     ---------------------------------------------------------
                     Secure OpenAPI JSON
@@ -130,6 +132,7 @@ def custom_swagger_ui():
                     Run Server
     ---------------------------------------------------------
 """
+
 
 
 if __name__ == "__main__":
