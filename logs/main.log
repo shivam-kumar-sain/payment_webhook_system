@@ -1,0 +1,10 @@
+2026-05-12 17:29:35 | main.py | INFO | GET /api/docs | Status: 404 | Time: 0.0004s
+2026-05-12 17:29:35 | main.py | INFO | GET /favicon.ico | Status: 404 | Time: 0.0003s
+2026-05-12 17:29:35 | main.py | INFO | GET /api/docs | Status: 404 | Time: 0.0001s
+2026-05-12 17:29:35 | main.py | INFO | GET /favicon.ico | Status: 404 | Time: 0.0003s
+2026-05-12 17:29:35 | main.py | INFO | GET /api/docs | Status: 404 | Time: 0.0006s
+2026-05-12 17:29:35 | main.py | INFO | GET /favicon.ico | Status: 404 | Time: 0.0003s
+2026-05-12 17:29:36 | main.py | INFO | GET /api/docs | Status: 404 | Time: 0.0004s
+2026-05-12 17:29:36 | main.py | INFO | GET /favicon.ico | Status: 404 | Time: 0.0004s
+2026-05-12 17:29:36 | main.py | INFO | GET /api/docs | Status: 404 | Time: 0.0002s
+2026-05-12 17:29:36 | main.py | INFO | GET /favicon.ico | Status: 404 | Time: 0.0003s

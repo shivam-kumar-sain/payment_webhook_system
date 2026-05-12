@@ -3,7 +3,8 @@ from typing import List
 from urllib.parse import quote_plus
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parents[1]
+BASE_DIR = Path(__file__).resolve().parents[2]
+
 class Settings(BaseSettings):
     app_name: str
     app_version: str
@@ -21,7 +22,11 @@ class Settings(BaseSettings):
     db_name: str
 
     webhook_secret: str
+    api_key: str
+    cors_origins: List[str] = ["*"]
 
+    session_secret_key: str
+    secret_key: str
     log_level: str = "INFO"
 
     server_host:str="127.0.0.1"

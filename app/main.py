@@ -4,6 +4,9 @@ from core.logger import get_logger
 from api.router import api_router
 from core.config import settings
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.openapi.docs import get_swagger_ui_html
+from fastapi.openapi.utils import get_openapi
+
 
 import os
 import time
@@ -83,6 +86,7 @@ def create_application() -> FastAPI:
         if not request.url.path.startswith(("/docs", "/openapi.json", "/static")):
             response.headers["Content-Security-Policy"] = "default-src 'self'"
         return response
+    return app
     
 """ 
     ---------------------------------------------------------
@@ -94,9 +98,40 @@ app = create_application()
 
 """ 
     ---------------------------------------------------------
+                    Secure OpenAPI JSON
+    ---------------------------------------------------------
+"""
+
+@app.get("/openapi.json", include_in_schema=False)
+def openapi_json():
+    return get_openapi(
+        title=settings.app_title,
+        version=settings.app_version,
+        description=settings.app_description,
+        routes=app.routes,
+    )
+
+""" 
+    ---------------------------------------------------------
+                        Secure Swagger UI
+    ---------------------------------------------------------
+"""
+
+@app.get("/docs", include_in_schema=False)
+def custom_swagger_ui():
+    return get_swagger_ui_html(
+        openapi_url="/openapi.json",
+        title=settings.app_title,
+        swagger_favicon_url="/static/favicon.ico",
+    )
+
+""" 
+    ---------------------------------------------------------
                     Run Server
     ---------------------------------------------------------
 """
+
+
 if __name__ == "__main__":
     uvicorn.run(
         "main:app",

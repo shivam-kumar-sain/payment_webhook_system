@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Request, Depends
 from sqlalchemy.orm import Session
 
-from app.core.database import get_db
-from app.services.payment_webhook_service import PaymentWebhookService
+from core.database import get_db
+from services.payment_webhook_service import PaymentWebhookService
 
 router = APIRouter(prefix="/public/webhook", tags=["Webhook"])
 
