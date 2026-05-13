@@ -1,6 +1,6 @@
 # Payment Webhook System
 
-A production-ready webhook processing system built using entity["software","FastAPI",""] and entity["software","PostgreSQL",""].
+A production-ready webhook processing system built using entity["software","FastAPI",""] and entity["software","PostgreSQL",""].
 
 This project supports:
 
@@ -18,28 +18,85 @@ This project supports:
 # Project Structure
 
 ```bash
-payment_webhook_system/
-│
+PAYMENT_WEBHOOK_SYSTEM/
 ├── alembic/
+│   ├── __pycache__/
+│   ├── versions/
+│   │   ├── __pycache__/
+│   │   └── 4d69e3e3ab7c_create_payment_events_table.py
+│   ├── env.py
+│   ├── README
+│   └── script.py.mako
+│
 ├── app/
+│   ├── __pycache__/
 │   ├── api/
+│   │   ├── __pycache__/
+│   │   ├── private/
 │   │   ├── public/
-│   │   └── private/
-│   │
+│   │   └── router.py
 │   ├── core/
+│   │   ├── __pycache__/
+│   │   ├── config.py
+│   │   ├── constants.py
+│   │   ├── database.py
+│   │   ├── logger.py
+│   │   └── security.py
+│   ├── dependencies/
+│   │   └── auth_dependency.py
 │   ├── exceptions/
+│   │   ├── __pycache__/
+│   │   ├── custom_exception.py
+│   │   └── handlers.py
+│   ├── middleware/
+│   │   └── request_logging.py
 │   ├── models/
+│   │   ├── __pycache__/
+│   │   └── payment_event_model.py
 │   ├── repositories/
+│   │   ├── __pycache__/
+│   │   └── payment_event_repository.py
 │   ├── schemas/
+│   │   ├── request/
+│   │   │   ├── __pycache__/
+│   │   │   └── webhook_request_schema.py
+│   │   └── response/
+│   │       └── payment_response_schema.py
 │   ├── services/
+│   │   ├── __pycache__/
+│   │   └── payment_webhook_service.py
+│   ├── static/
+│   │   └── favicon.ico
 │   ├── tests/
+│   │   ├── test_payment_events.py
+│   │   └── test_webhook.py
 │   └── utils/
+│       ├── __pycache__/
+│       ├── datetime_helper.py
+│       ├── payload_parser.py
+│       └── signature_helper.py
+│
+├── main.py
 │
 ├── logs/
+│   ├── __main__.log
+│   ├── __mp_main__.log
+│   ├── main.log
+│   ├── payment_webhook_service.log
+│   └── webhook_test_logs.json
+│
 ├── mock_payloads/
+│   ├── payment_authorized.json
+│   ├── payment_captured.json
+│   └── payment_failed.json
+│
 ├── .env
-├── requirements.txt
-└── README.md
+├── .gitignore
+├── alembic.ini
+├── docker-compose.yml
+├── DOCS.md
+├── README.md
+└── requirements.txt
 ```
 
 ---
@@ -129,20 +186,43 @@ pip install -r requirements.txt
 Create `.env`
 
 ```env
+C:\Project\FastApiProject\payment_webhook_system\requirements.txt
+# ===============================
+# APP CONFIG
+# ===============================
 APP_NAME=Payment Webhook System
 APP_VERSION=1.0.0
-APP_TITLE=Payment Webhook API
+APP_DESCRIPTION=Payment Webhook System Documentation
+APP_TITLE=Payment Webhook System API Documentation
 
+# Swagger URLs
+DOCS_URL=/docs
+REDOC_URL=/redoc
+OPENAPI_URL=/openapi.json
+
+# ===============================
+# DATABASE CONFIG (PostgreSQL)
+# ===============================
 DB_USER=postgres
-DB_PASSWORD=your_password
+DB_PASSWORD=Shivam@6399
 DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=payment_webhook_system_db
 
+# ===============================
+# SECURITY
+# ===============================
 WEBHOOK_SECRET=test_secret
 
-JWT_SECRET=secret_key
 
+# ===============================
+# LOGGING
+# ===============================
+LOG_LEVEL=INFO
+
+# ===============================
+# SERVER 
+# ===============================
 SERVER_HOST=127.0.0.1
 SERVER_PORT=8000
 ```
@@ -275,7 +355,7 @@ POST /webhook/payments
 ```bash
 curl -X POST http://127.0.0.1:8000/webhook/payments \
 -H "Content-Type: application/json" \
--H "X-Razorpay-Signature: TEST_SIGNATURE" \
+-H "X-Razorpay-Signature: test_secret" \
 -d @mock_payloads/payment_authorized.json
 ```
 
