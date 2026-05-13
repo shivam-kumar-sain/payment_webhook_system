@@ -1,0 +1,96 @@
+[
+    {
+        "timestamp": "2026-05-13T10:59:28.828762",
+        "command": "curl -X POST http://127.0.0.1:8000/webhook/payments -H Content-Type: application/json -H X-Razorpay-Signature: test_secret -d @mock_payloads/payment_authorized.json",
+        "status_code": 0,
+        "stdout": "{\"status\":true,\"message\":\"Bulk webhook processed successfully\",\"success\":[],\"issues\":[{\"event_id\":\"evt_auth_001\",\"status\":\"duplicate\"},{\"event_id\":\"evt_auth_002\",\"status\":\"duplicate\"},{\"event_id\":\"evt_auth_003\",\"status\":\"duplicate\"},{\"event_id\":\"evt_auth_004\",\"status\":\"duplicate\"},{\"event_id\":\"evt_auth_005\",\"status\":\"duplicate\"},{\"event_id\":\"evt_auth_006\",\"status\":\"duplicate\"},{\"event_id\":\"evt_auth_007\",\"status\":\"duplicate\"},{\"event_id\":\"evt_auth_008\",\"status\":\"duplicate\"},{\"event_id\":\"evt_auth_009\",\"status\":\"duplicate\"},{\"event_id\":\"evt_auth_010\",\"status\":\"duplicate\"},{\"event_id\":\"evt_auth_011\",\"status\":\"duplicate\"},{\"event_id\":\"evt_auth_012\",\"status\":\"duplicate\"},{\"event_id\":\"evt_auth_013\",\"status\":\"duplicate\"},{\"event_id\":\"evt_auth_014\",\"status\":\"duplicate\"},{\"event_id\":\"evt_auth_015\",\"status\":\"duplicate\"},{\"event_id\":\"evt_auth_016\",\"status\":\"duplicate\"},{\"event_id\":\"evt_auth_017\",\"status\":\"duplicate\"},{\"event_id\":\"evt_auth_018\",\"status\":\"duplicate\"},{\"event_id\":\"evt_auth_019\",\"status\":\"duplicate\"},{\"event_id\":\"evt_auth_020\",\"status\":\"duplicate\"}]}",
+        "stderr": "  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current\n                                 Dload  Upload  Total   Spent   Left   Speed\n\n  0      0   0      0   0      0      0      0                              0\n100   6668 100   1067 100   5601  10273  53930                              0\n100   6668 100   1067 100   5601  10268  53902                              0\n100   6668 100   1067 100   5601  10259  53853                              0\n",
+        "response_json": {
+            "status": true,
+            "message": "Bulk webhook processed successfully",
+            "success": [],
+            "issues": [
+                {
+                    "event_id": "evt_auth_001",
+                    "status": "duplicate"
+                },
+                {
+                    "event_id": "evt_auth_002",
+                    "status": "duplicate"
+                },
+                {
+                    "event_id": "evt_auth_003",
+                    "status": "duplicate"
+                },
+                {
+                    "event_id": "evt_auth_004",
+                    "status": "duplicate"
+                },
+                {
+                    "event_id": "evt_auth_005",
+                    "status": "duplicate"
+                },
+                {
+                    "event_id": "evt_auth_006",
+                    "status": "duplicate"
+                },
+                {
+                    "event_id": "evt_auth_007",
+                    "status": "duplicate"
+                },
+                {
+                    "event_id": "evt_auth_008",
+                    "status": "duplicate"
+                },
+                {
+                    "event_id": "evt_auth_009",
+                    "status": "duplicate"
+                },
+                {
+                    "event_id": "evt_auth_010",
+                    "status": "duplicate"
+                },
+                {
+                    "event_id": "evt_auth_011",
+                    "status": "duplicate"
+                },
+                {
+                    "event_id": "evt_auth_012",
+                    "status": "duplicate"
+                },
+                {
+                    "event_id": "evt_auth_013",
+                    "status": "duplicate"
+                },
+                {
+                    "event_id": "evt_auth_014",
+                    "status": "duplicate"
+                },
+                {
+                    "event_id": "evt_auth_015",
+                    "status": "duplicate"
+                },
+                {
+                    "event_id": "evt_auth_016",
+                    "status": "duplicate"
+                },
+                {
+                    "event_id": "evt_auth_017",
+                    "status": "duplicate"
+                },
+                {
+                    "event_id": "evt_auth_018",
+                    "status": "duplicate"
+                },
+                {
+                    "event_id": "evt_auth_019",
+                    "status": "duplicate"
+                },
+                {
+                    "event_id": "evt_auth_020",
+                    "status": "duplicate"
+                }
+            ]
+        }
+    }
+]

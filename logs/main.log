@@ -81,3 +81,1186 @@ Traceback (most recent call last):
     self.repo = PaymentEventRepository(db)
                 ^^^^^^^^^^^^^^^^^^^^^^
 NameError: name 'PaymentEventRepository' is not defined
+2026-05-13 09:22:49 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0021s
+2026-05-13 09:22:49 | main.py | INFO | GET /openapi.json | Status: 200 | Time: 0.0045s
+2026-05-13 09:27:15 | main.py | ERROR | Unhandled exception occurred
+Traceback (most recent call last):
+  File "C:\nbt_project\payment_webhook_system\app\main.py", line 58, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\api\public\webhook_routes.py", line 15, in receive_payment_webhook
+    return await service.process_webhook(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\services\payment_webhook_service.py", line 17, in process_webhook
+    verify_signature(raw_body, signature)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\utils\signature_helper.py", line 8, in verify_signature
+    if not hmac.compare_digest(generated_signature,signature):
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unsupported operand types(s) or combination of types: 'str' and 'NoneType'
+2026-05-13 10:52:07 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0057s
+2026-05-13 10:52:25 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0221s
+2026-05-13 10:52:25 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0029s
+2026-05-13 10:52:25 | main.py | INFO | GET /docs | Status: 200 | Time: 0.003s
+2026-05-13 10:52:25 | main.py | INFO | GET /docs | Status: 200 | Time: 0.003s
+2026-05-13 10:52:25 | main.py | INFO | GET /docs | Status: 200 | Time: 0.003s
+2026-05-13 10:52:25 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0031s
+2026-05-13 10:52:25 | main.py | INFO | GET /openapi.json | Status: 200 | Time: 0.0069s
+2026-05-13 10:52:25 | main.py | INFO | GET /static/favicon.ico | Status: 200 | Time: 0.0276s
+2026-05-13 10:52:28 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0009s
+2026-05-13 10:52:29 | main.py | INFO | GET /openapi.json | Status: 200 | Time: 0.003s
+2026-05-13 10:52:29 | main.py | INFO | GET /static/favicon.ico | Status: 200 | Time: 0.0019s
+2026-05-13 10:58:09 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0028s
+2026-05-13 10:58:09 | main.py | INFO | GET /openapi.json | Status: 200 | Time: 0.0123s
+2026-05-13 10:58:10 | main.py | INFO | GET /static/favicon.ico | Status: 200 | Time: 0.0844s
+2026-05-13 11:30:09 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0029s
+2026-05-13 11:30:09 | main.py | INFO | GET /openapi.json | Status: 200 | Time: 0.005s
+2026-05-13 11:30:09 | main.py | INFO | GET /static/favicon.ico | Status: 304 | Time: 0.0877s
+2026-05-13 12:07:50 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:08:01 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:09:07 | main.py | INFO | postgresql+psycopg2://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:09:53 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:11:34 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:12:10 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:12:35 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:13:23 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:13:57 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:14:09 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:14:11 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:14:15 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:14:19 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:14:22 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:14:23 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:14:30 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:14:32 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:14:39 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:18:22 | main.py | ERROR | Unhandled exception occurred
+Traceback (most recent call last):
+  File "C:\nbt_project\payment_webhook_system\app\main.py", line 60, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\api\public\webhook_routes.py", line 11, in receive_payment_webhook
+    return await service.process_webhook(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\services\payment_webhook_service.py", line 17, in process_webhook
+    verify_signature(raw_body, signature)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\utils\signature_helper.py", line 8, in verify_signature
+    if not hmac.compare_digest(generated_signature,signature):
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unsupported operand types(s) or combination of types: 'str' and 'NoneType'
+2026-05-13 12:20:40 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:20:44 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:20:47 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:21:00 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:21:17 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:21:20 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:21:26 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:21:28 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:21:31 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:21:36 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:21:37 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:21:42 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:21:44 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:22:52 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:22:58 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:22:59 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:23:01 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:23:02 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:23:05 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:23:07 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:23:08 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:23:11 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:23:16 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:23:18 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:23:23 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:23:24 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:23:26 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:23:28 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:23:30 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:23:37 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:23:39 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:23:43 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:23:49 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:23:51 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:23:57 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:23:59 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:24:01 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:24:06 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0036s
+2026-05-13 12:24:06 | main.py | INFO | GET /openapi.json | Status: 200 | Time: 0.0127s
+2026-05-13 12:24:07 | main.py | INFO | GET /static/favicon.ico | Status: 304 | Time: 0.0764s
+2026-05-13 12:24:48 | main.py | ERROR | Unhandled exception occurred
+Traceback (most recent call last):
+  File "C:\nbt_project\payment_webhook_system\app\main.py", line 60, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\api\public\webhook_routes.py", line 12, in receive_payment_webhook
+    return await service.process_webhook(request=request,payload=payload)
+                 ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: PaymentWebhookService.process_webhook() got an unexpected keyword argument 'payload'
+2026-05-13 12:25:40 | main.py | ERROR | Unhandled exception occurred
+Traceback (most recent call last):
+  File "C:\nbt_project\payment_webhook_system\app\main.py", line 60, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\api\public\webhook_routes.py", line 12, in receive_payment_webhook
+    return await service.process_webhook(request=request,payload=payload)
+                 ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: PaymentWebhookService.process_webhook() got an unexpected keyword argument 'payload'
+2026-05-13 12:25:46 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:25:49 | main.py | ERROR | Unhandled exception occurred
+Traceback (most recent call last):
+  File "C:\nbt_project\payment_webhook_system\app\main.py", line 60, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\api\public\webhook_routes.py", line 12, in receive_payment_webhook
+    return await service.process_webhook(request=request,payload=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\services\payment_webhook_service.py", line 20, in process_webhook
+    verify_signature(raw_body,signature)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\utils\signature_helper.py", line 8, in verify_signature
+    if not hmac.compare_digest(generated_signature,signature):
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unsupported operand types(s) or combination of types: 'str' and 'NoneType'
+2026-05-13 12:29:02 | main.py | ERROR | Unhandled exception occurred
+Traceback (most recent call last):
+  File "C:\nbt_project\payment_webhook_system\app\main.py", line 60, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\api\public\webhook_routes.py", line 12, in receive_payment_webhook
+    return await service.process_webhook(request=request,payload=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\services\payment_webhook_service.py", line 20, in process_webhook
+    verify_signature(raw_body,signature)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\utils\signature_helper.py", line 8, in verify_signature
+    generated_signature = hmac.new(SECRET.encode(),body,hashlib.sha256).hexdigest()
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unsupported operand types(s) or combination of types: 'str' and 'NoneType'
+2026-05-13 12:29:08 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:29:10 | main.py | INFO | POST /api/v1/public/webhook/payments | Status: 403 | Time: 0.0023s
+2026-05-13 12:32:20 | main.py | INFO | POST /api/v1/public/webhook/payments | Status: 403 | Time: 0.0012s
+2026-05-13 12:35:02 | main.py | INFO | POST /api/v1/public/webhook/payments | Status: 403 | Time: 0.0016s
+2026-05-13 12:40:14 | main.py | ERROR | Unhandled exception occurred
+Traceback (most recent call last):
+  File "C:\nbt_project\payment_webhook_system\app\main.py", line 60, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\api\public\webhook_routes.py", line 12, in receive_payment_webhook
+    return await service.process_webhook(request=request,payload=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\services\payment_webhook_service.py", line 26, in process_webhook
+    existing_event = self.repo.get_by_event_id(event_id)
+  File "C:\nbt_project\payment_webhook_system\app\repositories\payment_event_repository.py", line 8, in get_by_event_id
+    return self.db.query(PaymentEvent).filter(
+                         ^^^^^^^^^^^^
+NameError: name 'PaymentEvent' is not defined
+2026-05-13 12:40:57 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:41:00 | main.py | ERROR | Unhandled exception occurred
+Traceback (most recent call last):
+  File "C:\nbt_project\payment_webhook_system\app\main.py", line 60, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\api\public\webhook_routes.py", line 12, in receive_payment_webhook
+    return await service.process_webhook(request=request,payload=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\services\payment_webhook_service.py", line 31, in process_webhook
+    event_data = parse_payment_payload(validated_payload)
+  File "C:\nbt_project\payment_webhook_system\app\utils\payload_parser.py", line 4, in parse_payment_payload
+    "event_id": payload["id"],
+                ~~~~~~~^^^^^^
+TypeError: 'WebhookRequestSchema' object is not subscriptable
+2026-05-13 12:56:40 | main.py | ERROR | Unhandled exception occurred
+Traceback (most recent call last):
+  File "C:\nbt_project\payment_webhook_system\app\main.py", line 60, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\api\public\webhook_routes.py", line 12, in receive_payment_webhook
+    return await service.process_webhook(request=request,payload=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\services\payment_webhook_service.py", line 31, in process_webhook
+    event_data = parse_payment_payload(validated_payload)
+  File "C:\nbt_project\payment_webhook_system\app\utils\payload_parser.py", line 4, in parse_payment_payload
+    "event_id": payload["id"],
+                ~~~~~~~^^^^^^
+TypeError: 'WebhookRequestSchema' object is not subscriptable
+2026-05-13 12:56:45 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 12:56:51 | main.py | ERROR | Unhandled exception occurred
+Traceback (most recent call last):
+  File "C:\nbt_project\payment_webhook_system\app\main.py", line 60, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\api\public\webhook_routes.py", line 12, in receive_payment_webhook
+    return await service.process_webhook(request=request,payload=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\services\payment_webhook_service.py", line 31, in process_webhook
+    event_data = parse_payment_payload(validated_payload)
+  File "C:\nbt_project\payment_webhook_system\app\utils\payload_parser.py", line 4, in parse_payment_payload
+    "event_id": payload["id"],
+                ~~~~~~~^^^^^^
+TypeError: 'WebhookRequestSchema' object is not subscriptable
+2026-05-13 13:49:38 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 13:49:39 | main.py | ERROR | Unhandled exception occurred
+Traceback (most recent call last):
+  File "C:\nbt_project\payment_webhook_system\app\main.py", line 60, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\api\public\webhook_routes.py", line 12, in receive_payment_webhook
+    return await service.process_webhook(request=request,payload=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\services\payment_webhook_service.py", line 31, in process_webhook
+    event_data = parse_payment_payload(validated_payload)
+  File "C:\nbt_project\payment_webhook_system\app\utils\payload_parser.py", line 4, in parse_payment_payload
+    "event_id": payload["id"],
+                ~~~~~~~^^^^^^
+TypeError: 'WebhookRequestSchema' object is not subscriptable
+2026-05-13 13:50:44 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 13:50:48 | main.py | INFO | POST /api/v1/public/webhook/payments | Status: 200 | Time: 0.0699s
+2026-05-13 13:51:20 | main.py | ERROR | Unhandled exception occurred
+Traceback (most recent call last):
+  File "C:\nbt_project\payment_webhook_system\app\main.py", line 60, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\api\public\webhook_routes.py", line 12, in receive_payment_webhook
+    return await service.process_webhook(request=request,payload=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\services\payment_webhook_service.py", line 30, in process_webhook
+    raise DuplicateWebhookException()
+app.exceptions.custom_exception.DuplicateWebhookException
+2026-05-13 13:54:59 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 13:55:01 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 13:55:05 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 13:55:12 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 13:55:19 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 13:55:20 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 13:55:21 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 13:55:23 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 13:55:48 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 13:55:48 | main.py | ERROR | Unhandled exception occurred
+Traceback (most recent call last):
+  File "C:\nbt_project\payment_webhook_system\app\main.py", line 60, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\nbt_project\civic_venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\nbt_project\civic_venv\Lib\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\api\public\webhook_routes.py", line 12, in receive_payment_webhook
+    return await service.process_webhook(request=request,payload=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\nbt_project\payment_webhook_system\app\services\payment_webhook_service.py", line 30, in process_webhook
+    raise DuplicateWebhookException()
+app.exceptions.custom_exception.DuplicateWebhookException
+2026-05-13 13:55:52 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 13:55:58 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 13:56:13 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 13:56:15 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 13:56:33 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 13:56:36 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 13:56:38 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 13:56:40 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 13:56:45 | main.py | INFO | POST /api/v1/public/webhook/payments | Status: 409 | Time: 0.0475s
+2026-05-13 13:57:11 | main.py | INFO | POST /api/v1/public/webhook/payments | Status: 422 | Time: 0.0057s
+2026-05-13 13:57:33 | main.py | INFO | POST /api/v1/public/webhook/payments | Status: 409 | Time: 0.0045s
+2026-05-13 14:08:38 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:08:41 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:11:07 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:16:26 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:16:32 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:16:33 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:16:59 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:17:04 | main.py | INFO | GET /api/docs | Status: 404 | Time: 0.0005s
+2026-05-13 14:17:04 | main.py | INFO | GET /favicon.ico | Status: 404 | Time: 0.0004s
+2026-05-13 14:17:09 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0032s
+2026-05-13 14:17:09 | main.py | INFO | GET /openapi.json | Status: 200 | Time: 0.0113s
+2026-05-13 14:19:09 | main.py | INFO | POST /api/v1/public/webhook/payments | Status: 200 | Time: 0.149s
+2026-05-13 14:24:24 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:26:06 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:26:11 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:26:13 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0021s
+2026-05-13 14:26:13 | main.py | INFO | GET /openapi.json | Status: 200 | Time: 0.0075s
+2026-05-13 14:26:13 | main.py | INFO | GET /static/favicon.ico | Status: 304 | Time: 0.0318s
+2026-05-13 14:26:20 | main.py | INFO | POST /webhook/payments | Status: 403 | Time: 0.0038s
+2026-05-13 14:26:34 | main.py | INFO | POST /webhook/payments | Status: 409 | Time: 0.0632s
+2026-05-13 14:27:07 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:27:12 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:27:17 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:27:32 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:27:57 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:27:59 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:28:24 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:28:27 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:28:29 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:28:38 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:33:45 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:33:46 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:33:48 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:33:51 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:33:56 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:33:57 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:34:04 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:34:06 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:34:12 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:34:15 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:34:16 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:34:19 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:34:21 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:34:22 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:34:24 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:34:27 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:34:29 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:34:31 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:34:35 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:35:25 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:35:29 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:36:31 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:36:35 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:36:37 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:36:38 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:36:40 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:36:41 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:36:44 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:36:46 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:36:47 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:37:27 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:37:32 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:37:34 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:37:35 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:37:38 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:37:40 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:37:44 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:37:46 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:37:50 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:37:55 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:37:57 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:38:00 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:38:02 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:38:04 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:38:06 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:38:07 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:38:13 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:38:15 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:38:18 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:38:48 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:38:52 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:38:54 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:38:59 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:39:36 | main.py | INFO | GET /docs | Status: 200 | Time: 0.0032s
+2026-05-13 14:39:37 | main.py | INFO | GET /openapi.json | Status: 200 | Time: 0.0117s
+2026-05-13 14:39:51 | main.py | INFO | GET /payments/pay_020/events | Status: 200 | Time: 0.0693s
+2026-05-13 14:40:44 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:40:48 | main.py | INFO | GET /payments/pay_020/events | Status: 200 | Time: 0.0625s
+2026-05-13 14:40:59 | main.py | INFO | GET /payments/pay_020/events | Status: 200 | Time: 0.0053s
+2026-05-13 14:41:00 | main.py | INFO | GET /payments/pay_020/events | Status: 200 | Time: 0.0029s
+2026-05-13 14:41:00 | main.py | INFO | GET /payments/pay_020/events | Status: 200 | Time: 0.0029s
+2026-05-13 14:41:00 | main.py | INFO | GET /payments/pay_020/events | Status: 200 | Time: 0.0046s
+2026-05-13 14:41:01 | main.py | INFO | GET /payments/pay_020/events | Status: 200 | Time: 0.0045s
+2026-05-13 14:41:01 | main.py | INFO | GET /payments/pay_020/events | Status: 200 | Time: 0.0026s
+2026-05-13 14:41:01 | main.py | INFO | GET /payments/pay_020/events | Status: 200 | Time: 0.0037s
+2026-05-13 14:41:02 | main.py | INFO | GET /payments/pay_020/events | Status: 200 | Time: 0.004s
+2026-05-13 14:41:47 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:41:57 | main.py | INFO | GET /payments/pay_020/events | Status: 200 | Time: 0.062s
+2026-05-13 14:47:29 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:47:31 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:47:36 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:47:38 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:47:41 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:47:43 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:47:46 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:47:49 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:47:52 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:47:55 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:47:56 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:47:59 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:48:02 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:48:06 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:48:24 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:48:27 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:53:05 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:53:08 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:53:10 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:53:16 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:53:17 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:53:19 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:53:22 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:53:26 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:53:29 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:53:31 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:53:33 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:53:34 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:53:38 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:53:41 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:53:43 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:53:45 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:55:21 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:55:22 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:55:28 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:55:29 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:55:32 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:57:51 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:58:15 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:58:23 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:58:31 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:58:54 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 14:59:21 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:00:28 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:00:35 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:00:36 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:00:38 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:00:40 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:00:42 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:00:43 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:00:45 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:00:46 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:00:48 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:00:50 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:00:54 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:00:56 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:00:58 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:01:05 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:01:10 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:01:11 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:01:15 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:01:18 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:01:20 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:01:31 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:01:37 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:01:39 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:01:42 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:01:45 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:01:48 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:01:50 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:01:56 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:01:59 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:02:07 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:02:27 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:02:33 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:02:37 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:02:48 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:02:51 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:02:55 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:03:00 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:03:03 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:03:17 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:03:20 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:03:27 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:03:30 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:03:56 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:04:02 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:04:05 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:04:07 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:04:14 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:04:17 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:04:20 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:04:25 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:04:28 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:04:37 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:04:39 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:04:43 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:04:47 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:04:50 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:04:54 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:04:57 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:05:02 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:05:07 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:05:09 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:07:04 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:07:05 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:07:07 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:07:09 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:07:11 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:07:12 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:07:16 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:07:18 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:07:21 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:07:23 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:07:27 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:07:31 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:07:33 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:07:37 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:07:43 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:07:46 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:07:48 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:07:49 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:07:57 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:08:04 | main.py | INFO | POST /webhook/payments | Status: 409 | Time: 0.0809s
+2026-05-13 15:09:14 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:24:16 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:24:24 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:24:32 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:24:36 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:24:39 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:24:43 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:24:45 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:24:48 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:24:51 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:24:55 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:24:59 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:25:02 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:25:03 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:25:07 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:25:10 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:25:10 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:25:27 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:25:31 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:25:33 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:25:34 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:25:36 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:25:38 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:25:39 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:27:21 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:30:54 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:30:55 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:31:01 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:31:05 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:31:06 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:31:09 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:31:11 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:31:20 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:31:22 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:31:26 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:31:27 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:31:28 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:31:32 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:31:35 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:31:37 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:31:38 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:31:45 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:31:47 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:31:50 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:32:02 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:33:17 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:33:19 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:33:28 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:33:32 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:33:37 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:33:39 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:33:42 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:33:45 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:33:48 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:33:52 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:33:55 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:33:57 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:34:04 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:34:13 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:34:15 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:34:20 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:34:26 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:34:29 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:34:31 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:34:33 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:34:37 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:37:02 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:37:12 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:37:15 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:37:18 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:37:20 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:37:21 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:37:24 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:37:27 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:37:29 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:37:33 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:37:35 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:37:39 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:37:41 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:37:47 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:37:49 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:37:52 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:37:56 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:37:59 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:38:00 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:38:03 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:38:04 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:38:06 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:38:16 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:38:18 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:38:19 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:38:21 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:38:35 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:38:39 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:38:41 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:38:59 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:39:08 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:39:25 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:39:31 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:39:38 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:39:41 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:39:44 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:40:18 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:40:22 | main.py | INFO | POST /webhook/payments | Status: 409 | Time: 0.0964s
+2026-05-13 15:40:25 | main.py | INFO | POST /webhook/payments | Status: 409 | Time: 0.0028s
+2026-05-13 15:40:38 | main.py | INFO | POST /webhook/payments | Status: 422 | Time: 0.0057s
+2026-05-13 15:42:41 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:42:46 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:42:51 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:42:52 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:42:54 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:42:57 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:43:01 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:43:03 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:43:04 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:43:07 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:43:08 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:43:12 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:43:14 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:43:18 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:43:21 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:43:23 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:43:25 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:43:29 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:43:33 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:43:35 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:43:37 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:43:39 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:43:40 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:43:45 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:43:46 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:43:50 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:43:51 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:43:56 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:43:57 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 15:44:03 | main.py | INFO | POST /webhook/payments | Status: 200 | Time: 0.0439s
+2026-05-13 15:44:12 | main.py | INFO | POST /webhook/payments | Status: 409 | Time: 0.0036s
+2026-05-13 15:44:16 | main.py | INFO | POST /webhook/payments | Status: 409 | Time: 0.0025s
+2026-05-13 15:44:23 | main.py | INFO | POST /webhook/payments | Status: 200 | Time: 0.0025s
+2026-05-13 16:00:08 | main.py | INFO | POST /webhook/payments | Status: 200 | Time: 0.0809s
+2026-05-13 16:00:27 | main.py | INFO | POST /webhook/payments | Status: 200 | Time: 0.0198s
+2026-05-13 16:15:40 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:16:01 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:16:02 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:16:03 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:16:09 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:16:17 | main.py | INFO | POST /webhook/payments | Status: 200 | Time: 0.0633s
+2026-05-13 16:16:21 | main.py | INFO | POST /webhook/payments | Status: 200 | Time: 0.0238s
+2026-05-13 16:16:24 | main.py | INFO | POST /webhook/payments | Status: 200 | Time: 0.0147s
+2026-05-13 16:16:30 | main.py | INFO | POST /webhook/payments | Status: 200 | Time: 0.0121s
+2026-05-13 16:17:01 | main.py | INFO | POST /webhook/payments | Status: 422 | Time: 0.0031s
+2026-05-13 16:17:15 | main.py | INFO | POST /webhook/payments | Status: 200 | Time: 0.0138s
+2026-05-13 16:18:34 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:18:36 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:18:46 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:18:51 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:18:58 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:19:02 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:23:40 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:23:48 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:23:53 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:23:59 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:24:01 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:25:24 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:26:24 | main.py | INFO | POST /webhook/payments | Status: 200 | Time: 0.1301s
+2026-05-13 16:28:36 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:28:42 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:28:43 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:28:46 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:28:48 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:28:51 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:28:55 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:28:59 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:29:01 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:29:02 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:29:05 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 16:29:28 | main.py | INFO | POST /webhook/payments | Status: 200 | Time: 0.0963s

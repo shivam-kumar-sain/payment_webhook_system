@@ -1,14 +1,16 @@
 from fastapi import FastAPI, Request,HTTPException
 from fastapi.staticfiles import StaticFiles
 import uvicorn
-from core.logger import get_logger
-from api.router import api_router
-from core.config import settings
+from app.core.logger import get_logger
+from app.api.router import api_router
+from app.core.config import settings
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.docs import get_swagger_ui_html
 from fastapi.openapi.utils import get_openapi
 import os
 import time
+from app.exceptions.custom_exception import (InvalidSignatureException)
+from app.exceptions.handlers import (register_exception_handlers)
 
 """ 
     ---------------------------------------------------------
@@ -17,7 +19,7 @@ import time
 """ 
 logger = get_logger(__name__)
 logger.setLevel(settings.log_level)
-
+logger.info(settings.database_url)
 """ 
     ---------------------------------------------------------
                     App Factory
@@ -91,6 +93,7 @@ def create_application() -> FastAPI:
 """
 app = create_application()
 
+register_exception_handlers(app)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -134,10 +137,9 @@ def custom_swagger_ui():
 """
 
 
-
 if __name__ == "__main__":
     uvicorn.run(
-        "main:app",
+        "app.main:app",
         host=settings.server_host,
         port=settings.server_port,
         reload=True

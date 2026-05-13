@@ -28,7 +28,6 @@ class Settings(BaseSettings):
     session_secret_key: str
     secret_key: str
     log_level: str = "INFO"
-
     server_host:str="127.0.0.1"
     server_port:int=8000
     server_reload:bool=True
