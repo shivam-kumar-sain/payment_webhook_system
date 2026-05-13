@@ -598,3 +598,7 @@
 2026-05-13 16:29:28 | payment_webhook_service.py | WARNING | Duplicate webhook received event_id=evt_auth_020
 2026-05-13 16:29:28 | payment_webhook_service.py | WARNING | Duplicate skipped event_id=evt_auth_020
 2026-05-13 16:29:28 | payment_webhook_service.py | INFO | Bulk webhook processing completed success=0 issues=20
+2026-05-13 17:11:58 | payment_webhook_service.py | INFO | Fetching payment events payment_id=pay_020
+2026-05-13 17:11:58 | payment_webhook_service.py | INFO | Fetched 1 events for payment_id=pay_020
+2026-05-13 17:12:01 | payment_webhook_service.py | INFO | Fetching payment events payment_id=pay_020
+2026-05-13 17:12:01 | payment_webhook_service.py | INFO | Fetched 1 events for payment_id=pay_020

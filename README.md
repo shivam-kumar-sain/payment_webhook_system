@@ -186,7 +186,6 @@ pip install -r requirements.txt
 Create `.env`
 
 ```env
-C:\Project\FastApiProject\payment_webhook_system\requirements.txt
 # ===============================
 # APP CONFIG
 # ===============================
@@ -423,7 +422,38 @@ X-Razorpay-Signature
   }
 }
 ```
+---
 
+# Get Payment Events
+
+## Endpoint
+
+```http
+GET /payments/{payment_id}/events
+```
+
+## Example Request
+
+```bash
+curl -X GET \
+"http://127.0.0.1:8000/payments/pay_020/events" \
+-H "accept: application/json"
+```
+
+## Example Response
+
+```json
+{
+  "status": true,
+  "message": "Payment events fetched successfully",
+  "data": [
+    {
+      "event_type": "payment.authorized",
+      "received_at": "2025-07-07T12:34:25"
+    }
+  ]
+}
+```
 ---
 
 # Future Improvements

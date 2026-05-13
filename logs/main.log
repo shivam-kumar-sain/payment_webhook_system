@@ -1271,3 +1271,6 @@ app.exceptions.custom_exception.DuplicateWebhookException
 2026-05-13 17:01:32 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
 2026-05-13 17:01:36 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
 2026-05-13 17:01:37 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 17:11:56 | main.py | INFO | postgresql://postgres:Shivam%406399@localhost:5432/payment_webhook_system_db
+2026-05-13 17:11:58 | main.py | INFO | GET /payments/pay_020/events | Status: 200 | Time: 0.0664s
+2026-05-13 17:12:01 | main.py | INFO | GET /payments/pay_020/events | Status: 200 | Time: 0.0055s
